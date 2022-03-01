@@ -60,7 +60,8 @@ export const formatCurrency = (currency: string) => {
 const Trips = () => {
   const [trips, setTrips] = useState<Array<trips>>([])
   const [cursor, setCursor] = useState<string>('')
-  let url = `https://public-api.blablacar.com/api/v3/trips?key=YzbiA8L6DcqxTvSna1lOFQQU66FosDVs&from_coordinate=48.8566%2C2.3522&to_coordinate=45.764043%2C4.835659&from_country=FR&to_country=FR&locale=en-GB&start_date_local=2020-07-10T20:00:00&currency=EUR&count=2`
+  const today = new Date().toISOString()
+  let url = `https://public-api.blablacar.com/api/v3/trips?key=YzbiA8L6DcqxTvSna1lOFQQU66FosDVs&from_coordinate=48.8566%2C2.3522&to_coordinate=45.764043%2C4.835659&from_country=FR&to_country=FR&locale=en-GB&start_date_local=${today}&currency=EUR&count=5`
   const fetchData = async (cursor?: string) => {
     if (cursor) {
       url = url + `&from_cursor	=${cursor}`
