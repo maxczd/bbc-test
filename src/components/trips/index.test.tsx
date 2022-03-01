@@ -1,4 +1,6 @@
 import { formatDate, formatCurrency, formatPrice, formatAmount } from './'
+import Trips from './'
+import { render } from '@testing-library/react'
 
 describe('The formatDate function', () => {
     it('should return the right format for a given date', () => {
@@ -33,5 +35,11 @@ describe('The formatAmount function', () => {
     it('should round number when necessary', () => {
         const expectedDtate = '6'
         expect(formatAmount('6.00')).toEqual(expectedDtate)
+    })
+})
+
+describe('Trips', () => {
+    test('Should render without crash', async () => {
+        render(<Trips />)
     })
 })
