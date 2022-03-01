@@ -1,46 +1,100 @@
-# Getting Started with Create React App
+# Blablacar technical test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Blablacar technical test is a small one page web application that renders a search result page of carpooling. It is configured to display the first 5 trips of the current day, but you can display more if you click on the `Load more results` button at the bottom of the page.
 
-## Available Scripts
+This web application has been built in a context of a technical test interview for Blablacar.
 
-In the project directory, you can run:
+  <p align="center">
+    <img src="/assets/bbc.png" width="50"/>
+  </p>
+ 
+## Architecture
 
-### `npm start`
+The application is built with ReactJS librairy in Typescript. It communicates with a Blablacar API to fetch data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Development
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Setup
 
-### `npm test`
+### Requirements
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- NodeJS (v16.13.2)
+- Npm (v8.3.2)
 
-### `npm run build`
+### Install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# install dependencies
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+or
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# install dependencies
+yarn install
+```
 
-### `npm run eject`
+### Run
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+# launch the app locally
+npm run start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+or
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+# launch the app locally
+yarn start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Lint
 
-## Learn More
+```bash
+# run eslint
+npm run lint
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Unit tests
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+# run all unit tests
+npm run test
+```
+
+or
+
+```bash
+# run all unit tests
+yarn run test
+```
+
+```bash
+# run unit tests coverage
+yarn test -- --coverage
+```
+
+### File structure
+
+```
+src
+├── main: the main process is the mother of all process. It boots internal and renderer process and starts the window.
+├── root: basis routing file.
+├── version: latest branch version.
+├── components: gathers all front components needed for the app.
+├── graphql
+├── images: gathers all images needed for the app.
+├── locales: gathers all specific label files.
+├── modules: gathers the 3 blocks of views: admin, product & admin
+├── resources: gathers all kind of resources (api calls, state management, types, graphQL queries...)
+├── sercices: gathers api & autenticator services.
+├── styles: gather main .scss file and colors binding files.
+test
+├── e2e : gathers all integration tests files.
+├── unit: gathers all unit tests files.
+themes: gathers all theme files.
+favicons: gathers all possible favicons.
+portal_ingest: gathers all data files needed to run the Control Tower with data.
+configs: gathers all json configuration files for every clients & partners.
+```
