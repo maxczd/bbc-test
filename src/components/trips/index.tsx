@@ -1,5 +1,12 @@
 import { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import {
+  TripsContainer,
+  TripLocations,
+  TripDatePrice,
+  TripCard,
+  BBCLogo,
+  BBCLink,
+} from './style'
 
 interface trips {
   link: string
