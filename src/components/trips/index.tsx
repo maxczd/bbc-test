@@ -34,35 +34,28 @@ export const formatDate = (date: Date | string) => {
   return `${hours}:${minutes}`
 }
 
-const TripCard = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: #f9f9fc;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: rgb(0 0 0 / 8%) 0px 2pt 8pt, rgb(0 0 0 / 8%) 0px 2pt 16pt;
-  width: 50%;
-`
-const TripLocations = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-const TripDatePrice = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-const BBCLink = styled.a`
-  width: 25px;
-  height: 25px;
-  display: flex;
-  align-self: center;
-`
-const BBCLogo = styled.img`
-  width: 25px;
-  height: 25px;
-`
+export const formatPrice = (price: string, currency: string) => {
+  const currencySymbol = formatCurrency(currency)
+  const amount = formatAmount(price)
+  if (currency === 'EUR') return `${amount} ${currencySymbol}`
+  else if (currency === 'GBP') return currencySymbol + amount
+}
+
+export const formatAmount = (amount: string) => {
+  console.log('amount', amount, amount.replace('.00', ''))
+  return amount.replace('.00', '')
+}
+
+export const formatCurrency = (currency: string) => {
+  switch (currency) {
+    case 'EUR':
+      return '€'
+    case 'GBP':
+      return '£'
+    default:
+      return '€'
+  }
+}
 
 const Trips = () => {
   const [trips, setTrips] = useState<Array<trips>>([])
@@ -98,7 +91,7 @@ const Trips = () => {
             <TripDatePrice>
               <span>🗓️ {trip.waypoints[0].date_time}</span>
               <span>
-                💰 {trip.price.amount} {trip.price.currency}
+                💰 {formatPrice(trip.price.amount, trip.price.currency)}
               </span>
             </TripDatePrice>
             <BBCLink href={trip.link}>
