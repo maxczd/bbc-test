@@ -89,7 +89,7 @@ const Trips = () => {
               <span>📍 {trip.waypoints[1].place.city}</span>
             </TripLocations>
             <TripDatePrice>
-              <span>🗓️ {trip.waypoints[0].date_time}</span>
+              <span>⌚ {formatDate(trip.waypoints[0].date_time)}</span>
               <span>
                 💰 {formatPrice(trip.price.amount, trip.price.currency)}
               </span>
