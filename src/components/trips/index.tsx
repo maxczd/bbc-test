@@ -27,11 +27,12 @@ interface waypoint {
   }
 }
 
-const TripsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
+export const formatDate = (date: Date | string) => {
+  const hours = new Date(date).getHours().toString()
+  let minutes = new Date(date).getMinutes().toString()
+  if (minutes === '0') minutes = '00'
+  return `${hours}:${minutes}`
+}
 
 const TripCard = styled.div`
   display: flex;
