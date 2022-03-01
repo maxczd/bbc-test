@@ -13,7 +13,7 @@ interface trips {
   distance_in_meters: number
   duration_in_seconds: number
   price: {
-    amount: number
+    amount: string
     currency: string
   }
   waypoints: waypoint[]
