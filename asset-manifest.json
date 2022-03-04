@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/maxczd.github.io/static/css/main.e6c13ad2.css",
+    "main.js": "/maxczd.github.io/static/js/main.9a48de43.js",
+    "index.html": "/maxczd.github.io/index.html",
+    "main.e6c13ad2.css.map": "/maxczd.github.io/static/css/main.e6c13ad2.css.map",
+    "main.9a48de43.js.map": "/maxczd.github.io/static/js/main.9a48de43.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.9a48de43.js"
+  ]
+}
